@@ -188,6 +188,7 @@ body {
   body {
     display: flex;
     min-height: 100vh;
+    height: 1955px;
     justify-content: center;
     align-items: center;
     background-color: hsl(30, 54%, 90%);
