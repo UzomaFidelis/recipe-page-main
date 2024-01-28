@@ -1,0 +1,226 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("../../assets/fonts/young-serif/YoungSerif-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../../assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+.recipe {
+  color: hsl(30, 10%, 34%);
+  background-color: white;
+}
+.recipe__img {
+  width: 100%;
+}
+.recipe__img-container {
+  line-height: 0;
+}
+.recipe__text {
+  padding: 0.9rem 2rem 1.84rem;
+}
+.recipe__title {
+  font-weight: 400;
+  font-family: "Young Serif", sans-serif;
+  color: hsl(24, 5%, 18%);
+}
+.recipe__title_type_main {
+  font-size: 2.25rem;
+  line-height: 2.2rem;
+  margin: 1.58rem 0;
+}
+.recipe__title_type_sub {
+  font-size: 1.75rem;
+  color: hsl(14, 45%, 36%);
+  margin-bottom: 0;
+}
+.recipe__info {
+  line-height: 1.5rem;
+}
+.recipe__ul-list {
+  padding-left: 0.5rem;
+  margin: 1.33rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.78rem;
+}
+.recipe__ul-list-item {
+  display: flex;
+  gap: 1.8rem;
+}
+.recipe__ul-list-item::before {
+  content: "";
+  width: 0.26rem;
+  height: 0.26rem;
+  border-radius: 100%;
+  background: hsl(332, 51%, 32%);
+  align-self: center;
+}
+.recipe__ol-list {
+  padding-left: 0.5rem;
+  margin: 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.recipe__ol-list-item {
+  display: flex;
+  gap: 1.04rem;
+}
+.recipe__ol-list-item::before {
+  font-weight: 700;
+  padding-top: 1px;
+  flex: 0 0 1rem;
+  color: hsl(14, 45%, 36%);
+}
+.recipe__ol-list-item_1::before {
+  content: "1.";
+}
+.recipe__ol-list-item_2::before {
+  content: "2.";
+}
+.recipe__ol-list-item_3::before {
+  content: "3.";
+}
+.recipe__ol-list-item_4::before {
+  content: "4.";
+}
+.recipe__ol-list-item_5::before {
+  content: "5.";
+}
+.recipe__ol-list-item_6::before {
+  content: "6.";
+}
+.recipe__ol-list-text {
+  margin: 0;
+  line-height: 1.49rem;
+}
+.recipe__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.recipe__table-caption {
+  text-align: left;
+  padding: 1.1rem 0 0.9rem;
+  line-height: 1.5rem;
+}
+.recipe__table-row_bordered {
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+.recipe__table-cell {
+  padding: 0.822rem 0;
+  width: 50%;
+}
+.recipe__table-cell_left {
+  padding-left: 2rem;
+}
+.recipe__table-cell_right {
+  padding-left: 0.5rem;
+}
+.recipe__nutrition {
+  font-weight: 700;
+  color: hsl(332, 51%, 32%);
+}
+
+.prep-time {
+  padding: 0.1rem 1.5rem;
+  margin: 2rem 0;
+  background-color: hsl(330, 100%, 98%);
+}
+.prep-time__title {
+  color: hsl(332, 51%, 32%);
+  font-size: 1.23rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.prep-time__list {
+  padding-left: 0.5rem;
+  margin: 0.95rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.53rem;
+}
+.prep-time__list-item {
+  display: flex;
+  gap: 1.8rem;
+}
+.prep-time__list-item::before {
+  content: "";
+  width: 0.26rem;
+  height: 0.26rem;
+  border-radius: 100%;
+  background: hsl(332, 51%, 32%);
+  align-self: center;
+}
+.prep-time__text {
+  margin: 0;
+  line-height: 1.48rem;
+}
+
+.caption {
+  font-weight: 600;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid hsl(30, 18%, 87%);
+}
+.divider_1 {
+  margin: 2.2rem 0 1.7rem;
+}
+.divider_2 {
+  margin: 1.89rem 0 1.7rem;
+}
+
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(30, 54%, 90%);
+  }
+  .recipe {
+    width: 46rem;
+    border-radius: 1.6rem;
+    overflow: hidden;
+  }
+  .recipe__img {
+    border-radius: 1.2rem;
+  }
+  .recipe__img-container {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    padding: 2.42rem 2.42rem 0;
+  }
+  .recipe__text {
+    padding: 1rem 2.44rem 1.84rem 2.42rem;
+  }
+  .recipe__title_type_main {
+    font-size: 2.5rem;
+  }
+  .recipe__ol-list {
+    margin: 1rem 0;
+  }
+  .recipe__table-caption {
+    padding: 1.1rem 0 0.7rem;
+  }
+  .prep-time {
+    margin: 2.3rem 0 2.25rem;
+    padding: 0.1rem 1.7rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

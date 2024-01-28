@@ -1,0 +1,284 @@
+@use "variables" as vars;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@mixin font($family, $path, $wght: "") {
+  @font-face {
+    font-family: $family;
+    src: $path;
+    font-weight: #{$wght};
+  }
+}
+
+@mixin ol-numbering {
+  $numbers: 1 2 3 4 5 6;
+  @each $num in $numbers {
+    &_#{$num} {
+      &::before {
+        content: "#{$num}.";
+      }
+    }
+  }
+}
+
+@mixin dividers {
+  border: none;
+  border-top: 1px solid vars.$light-grey;
+
+  $numbers: 1 2;
+  @each $num in $numbers {
+    @if $num == 1 {
+      &_#{$num} {
+        margin: 2.2rem 0 1.7rem;
+      }
+    } @else if $num == 2 {
+      &_#{$num} {
+        margin: 1.89rem 0 1.7rem;
+      }
+    }
+  }
+}
+
+@include font(
+  "Young Serif",
+  url("../../assets/fonts/young-serif/YoungSerif-Regular.ttf"),
+  400
+);
+
+@include font(
+  "Outfit",
+  url("../../assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+);
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+.recipe {
+  color: vars.$wenge-brown;
+  background-color: white;
+
+  &__img {
+    width: 100%;
+
+    &-container {
+      line-height: 0;
+    }
+  }
+  &__text {
+    padding: 0.9rem 2rem 1.84rem;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-family: "Young Serif", sans-serif;
+    color: vars.$dark-charcoal;
+
+    &_type_main {
+      font-size: 2.25rem;
+      line-height: 2.2rem;
+      margin: 1.58rem 0;
+    }
+
+    &_type_sub {
+      font-size: 1.75rem;
+      color: vars.$nutmeg;
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    line-height: 1.5rem;
+  }
+
+  &__ul-list {
+    padding-left: 0.5rem;
+    margin: 1.33rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.78rem;
+
+    &-item {
+      display: flex;
+      gap: 1.8rem;
+
+      &::before {
+        content: "";
+        width: 0.26rem;
+        height: 0.26rem;
+        border-radius: 100%;
+        background: vars.$dark-raspberry;
+        align-self: center;
+      }
+    }
+  }
+
+  &__ol-list {
+    padding-left: 0.5rem;
+    margin: 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+
+    &-item {
+      display: flex;
+      gap: 1.04rem;
+
+      &::before {
+        font-weight: 700;
+        padding-top: 1px;
+        flex: 0 0 1rem;
+        color: vars.$nutmeg;
+      }
+
+      @include ol-numbering;
+    }
+
+    &-text {
+      margin: 0;
+      line-height: 1.49rem;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &-caption {
+      text-align: left;
+      padding: 1.1rem 0 0.9rem;
+      line-height: 1.5rem;
+    }
+
+    &-row {
+      &_bordered {
+        border-bottom: 1px solid vars.$light-grey;
+      }
+    }
+
+    &-cell {
+      padding: 0.822rem 0;
+      width: 50%;
+
+      &_left {
+        padding-left: 2rem;
+      }
+
+      &_right {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+
+  &__nutrition {
+    font-weight: 700;
+    color: vars.$dark-raspberry;
+  }
+}
+
+.prep-time {
+  padding: 0.1rem 1.5rem;
+  margin: 2rem 0;
+  background-color: vars.$rose-white;
+
+  &__title {
+    color: vars.$dark-raspberry;
+    font-size: 1.23rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  &__list {
+    padding-left: 0.5rem;
+    margin: 0.95rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.53rem;
+
+    &-item {
+      display: flex;
+      gap: 1.8rem;
+
+      &::before {
+        content: "";
+        width: 0.26rem;
+        height: 0.26rem;
+        border-radius: 100%;
+        background: vars.$dark-raspberry;
+        align-self: center;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    line-height: 1.48rem;
+  }
+}
+
+.caption {
+  font-weight: 600;
+}
+
+.divider {
+  @include dividers;
+}
+
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: vars.$eggshell;
+  }
+
+  .recipe {
+    width: 46rem;
+    border-radius: 1.6rem;
+    overflow: hidden;
+
+
+    &__img {
+
+      border-radius: 1.2rem;
+
+      &-container {
+        border-radius: 1.2rem;
+        overflow: hidden;
+        padding: 2.42rem 2.42rem 0;
+      }
+    }
+
+    &__text {
+      padding: 1rem 2.44rem 1.84rem 2.42rem;
+    }
+
+    &__title {
+
+      &_type_main {
+        font-size: 2.5rem;
+      }
+    }
+
+    &__ol-list {
+      margin: 1rem 0;
+    }
+
+    &__table {
+      &-caption {
+        padding: 1.1rem 0 0.7rem;
+      }
+    }
+  }
+
+  .prep-time {
+    margin: 2.3rem 0 2.25rem;
+    padding: 0.1rem 1.7rem;
+  }
+}
