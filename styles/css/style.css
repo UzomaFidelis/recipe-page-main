@@ -81,7 +81,7 @@ body {
 }
 .recipe__ol-list-item::before {
   font-weight: 700;
-  padding-top: 1px;
+  padding-top: 2px;
   flex: 0 0 1rem;
   color: hsl(14, 45%, 36%);
 }
