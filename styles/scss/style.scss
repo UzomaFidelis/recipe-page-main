@@ -229,7 +229,7 @@ body {
   @include dividers;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1000px) {
   body {
     display: flex;
     min-height: 100vh;
@@ -242,14 +242,15 @@ body {
     width: 46rem;
     border-radius: 1.6rem;
     overflow: hidden;
+    margin: 30px;
 
 
     &__img {
 
-      border-radius: 1.2rem;
+      border-radius: 0.9rem;
 
       &-container {
-        border-radius: 1.2rem;
+        border-radius: 0.9rem;
         overflow: hidden;
         padding: 2.42rem 2.42rem 0;
       }
