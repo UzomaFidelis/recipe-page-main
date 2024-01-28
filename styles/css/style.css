@@ -161,6 +161,7 @@ body {
   content: "";
   width: 0.26rem;
   height: 0.26rem;
+  flex: 0 0 0.26rem;
   border-radius: 100%;
   background: hsl(332, 51%, 32%);
   align-self: center;
